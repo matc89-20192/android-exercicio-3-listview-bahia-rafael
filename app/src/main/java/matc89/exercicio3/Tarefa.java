@@ -1,6 +1,8 @@
 package matc89.exercicio3;
 
-public class Tarefa {
+import android.support.annotation.NonNull;
+
+public class Tarefa implements Comparable{
     private String descricao;
     private int prioridade;
 
@@ -15,5 +17,13 @@ public class Tarefa {
 
     public int getPrioridade() {
         return prioridade;
+    }
+
+    @Override
+    public int compareTo(@NonNull Object o) {
+
+        int compareage=((Tarefa)o).getPrioridade();
+        /* For Ascending order*/
+        return this.prioridade-compareage;
     }
 }
